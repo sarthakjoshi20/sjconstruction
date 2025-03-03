@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="demo"></div>
+	<script type="text/javascript">
+		const name="abcdefgh";
+		let text = "";
+		for(const x of name){
+			text += x + "<br>"; 
+		}
+		document.getElementById("demo").innerHTML=text;
+	</script>
+	<div id="demo1"></div>
+	<script type="text/javascript">
+		const name1=[1,2,3,4];
+		let text1 = "";
+		for(const y of name1){
+			text1 += y + "<br>"; 
+		}
+		document.getElementById("demo1").innerHTML=text1;
+	</script>
+</body>
+</html>
