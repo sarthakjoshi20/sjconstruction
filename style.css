@@ -22,7 +22,7 @@
 }
 .slider_area{
     overflow: hidden;
-    height: 500px;
+    height: 400px;
 }
 .slider_video{
     transform:scale(1.2,1.0);
