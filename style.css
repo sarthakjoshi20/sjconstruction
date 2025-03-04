@@ -1,4 +1,4 @@
-.main_menu{
+ .main_menu{
     height: auto;
     width: 100%;
     float: left;
@@ -22,7 +22,7 @@
 }
 .slider_area{
     overflow: hidden;
-    height: 530px;
+    height: 500px;
 }
 .slider_video{
     transform:scale(1.2,1.0);
