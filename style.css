@@ -42,6 +42,9 @@
     .nav_margin{
         margin-left: 0px;
     }
+    .navdisp{
+        display:none;
+    }
     .nav-item .active{
         border-top:none;
         color:blue;
