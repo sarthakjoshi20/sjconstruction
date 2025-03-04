@@ -350,12 +350,3 @@
         color: white;
     }
 }
-
-.con-sec1{
-    padding-left: 200px;
-}
-@media(max-width:650px){
-    .con-sec1{
-        padding-left: 0px;
-    }
-}
