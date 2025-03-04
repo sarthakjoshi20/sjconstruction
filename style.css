@@ -2,13 +2,14 @@
     height: auto;
     width: 100%;
     float: left;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 .nav_margin{
     margin-left: 12 px;
 }
 .nav-item .active{
     border-top: 3px solid skyblue;
+    color:blue;
 }
 .nav-item:hover{
     color: skyblue;
@@ -38,6 +39,9 @@
     font-size: 60px;
 }
 @media(max-width:650px){
+    .nav_margin{
+        margin-left: 0px;
+    }
     .nav-item .active{
         border-top:none;
     }
