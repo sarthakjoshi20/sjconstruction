@@ -8,17 +8,17 @@
     margin-left: 12 px;
 }
 .nav-item .active{
-    border-top: 3px solid cyan;
-    color:red;
+    border-top: 3px solid skyblue;
+    color:blue;
 }
 .nav-item:hover{
-    color: red;
+    color: blue;
 }
 .pt-50{
     padding-top: 50px;
 }
 .nav-item:hover a{
-    color: red;
+    color: blue;
 }
 .slider_area{
     overflow: hidden;
