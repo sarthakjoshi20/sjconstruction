@@ -341,6 +341,18 @@
         background-size: 100% 100%;
         background-attachment: fixed;
     }
+    .sectction-1-ras h4{
+        text-align: center;
+        padding-top: 100px;
+        color: white;
+        font-size:16px;
+        font-weight: lighter;
+    }
+    .sectction-1-ras h5{
+        text-align: center;
+        color: white;
+        font-weight: lighter;
+    }
     .csr-button1{
         height: 150px;
         width: 350px;
