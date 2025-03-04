@@ -52,7 +52,9 @@
         font-weight:bold;
     }
     .nav_margin{
-        margin-left:0px;
+        margin: 0px;
+        margin-left:-325px;
+        padding: 0px;
     }
     .pt-50{
         padding-top:0px;
