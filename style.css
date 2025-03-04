@@ -41,6 +41,7 @@
 @media(max-width:650px){
     .nav_margin{
         margin-left: 0px;
+        text-align:left;
     }
     .navdisp{
         display:none;
