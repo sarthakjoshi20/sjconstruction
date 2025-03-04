@@ -336,22 +336,13 @@
 @media(max-width:650px){
     .sectction-1-ras{
         height: 200px;
-        width: 100%;
-        background-image: url(https://www.sjcpl.in/wp-content/uploads/2016/09/office-pic.jpg);
-        background-size: 100% 100%;
-        background-attachment: fixed;
     }
     .sectction-1-ras h4{
-        text-align: center;
-        padding-top: 100px;
-        color: white;
+        padding-top: 50px;
         font-size:16px;
-        font-weight: lighter;
     }
     .sectction-1-ras h5{
-        text-align: center;
-        color: white;
-        font-weight: lighter;
+        font-size:16px;
     }
     .csr-button1{
         height: 150px;
