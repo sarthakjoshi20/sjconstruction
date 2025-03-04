@@ -39,6 +39,9 @@
     font-size: 60px;
 }
 @media(max-width:650px){
+    .nav_margin{
+        margin-left: 0px;
+    }
     .navdisp{
         display:none;
     }
@@ -49,7 +52,7 @@
     }
     .nav_margin{
         margin: 0px;
-        margin-left:-315px;
+        margin-left:-325px;
         padding: 0px;
     }
     .pt-50{
@@ -61,7 +64,6 @@
     .nav-item:hover a{
         color: skyblue;
     }
-
     .slider-caption{
         height: 100%;
         width: 30%;
@@ -89,6 +91,13 @@
         height: auto;
         text-align: justify;
         font-weight: lighter;
+    }
+    .btnexo{
+        margin-right: 45px;
+        margin-left: 35px;
+    }
+    .btnexo1{
+        margin-left: -10px;
     }
     .iframe_vid{
         height: 150%;
