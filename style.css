@@ -45,6 +45,7 @@
     .nav-item .active{
         border-top:none;
         color:blue;
+        font-weight:bold;
     }
     .nav_margin{
         margin-left:0px;
