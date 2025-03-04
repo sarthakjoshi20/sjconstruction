@@ -12,13 +12,13 @@
     color:blue;
 }
 .nav-item:hover{
-    color: blue;
+    color: skyblue;
 }
 .pt-50{
     padding-top: 50px;
 }
 .nav-item:hover a{
-    color: blue;
+    color: skyblue;
 }
 .slider_area{
     overflow: hidden;
@@ -39,6 +39,9 @@
     font-size: 60px;
 }
 @media(max-width:650px){
+    .nav_margin{
+        margin-left: 0px;
+    }
     .navdisp{
         display:none;
     }
