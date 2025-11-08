@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - SJ Contracts | Join Our Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --secondary: #6c757d;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --accent: #ff6b35;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        /* Header Styles */
+        .navbar {
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .iso-badge {
+            height: 40px;
+            margin-left: 1rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 0 4rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Team Section */
+        .team-img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Values Section */
+        .values-section {
+            background-color: var(--light);
+        }
+        
+        .value-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background-color: white;
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Job Openings */
+        .job-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        .job-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .job-content {
+            padding: 1.5rem;
+        }
+        
+        .job-tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .apply-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .apply-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Benefits Section */
+        .benefit-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 700), rgba(0, 0, 0, 700)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        footer h5 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--primary);
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(0px);
+            color: white;
+        }
+        
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand img {
+                height: 50px;
+            }
+            
+            .iso-badge {
+                height: 30px;
+                margin-left: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 8rem 0 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-0 sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/sjlogo.jpg" alt="SJ Contracts Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Awards.html">Awards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Careers.html">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact-Us.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Build Your Career With Us</h1>
+            <p>Join our team of passionate professionals and be part of building the future. Discover opportunities for growth, innovation, and meaningful work.</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title text-center">Join Our Team</h2>
+                    <p class="mb-4">At SJCPL, we believe that great achievements are only possible when great people come together. Our team is made up of diverse, talented individuals who are driven by a shared passion for innovation, collaboration, and excellence.</p>
+                    <p class="mb-4">If you're ready for a rewarding career journey and to be a part of something impactful, SJCPL is the place for you. Join us in building the future! If you're excited about the prospect of working with a dynamic and vibrant team on ground-breaking projects, join us and be part of a team that's shaping the future.</p>
+                    <div class="mt-4">
+                        <a href="#job-openings" class="btn btn-primary btn-lg me-1">View Open Positions</a>
+                        <a href="Contact-Us.html" class="btn btn-outline-primary btn-lg">Contact HR</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="SJCPL Team" class="img-fluid team-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section-padding values-section">
+        <div class="container">
+            <h2 class="section-title">Why Work With Us</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Growth Opportunities</h4>
+                        <p>Continuous learning and career advancement opportunities with mentorship programs and skill development initiatives.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Collaborative Culture</h4>
+                        <p>Work in a supportive environment that values teamwork, open communication, and shared success.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h4>Industry Leadership</h4>
+                        <p>Be part of an award-winning company recognized for excellence in construction and safety standards.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Work-Life Balance</h4>
+                        <p>Flexible work arrangements and policies that support your personal and professional well-being.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovation Focus</h4>
+                        <p>Work with cutting-edge technology and innovative construction methods on challenging projects.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Competitive Benefits</h4>
+                        <p>Comprehensive compensation packages, health benefits, and performance-based incentives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Openings -->
+    <section class="section-padding" id="job-openings">
+        <div class="container">
+            <h2 class="section-title">Current Job Openings</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- Job 1 -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h4 class="mb-2">Senior Project Manager</h4>
+                            <div>
+                                <span class="job-tag">Full-time</span>
+                                <span class="job-tag">Pune</span>
+                                <span class="job-tag">8+ years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <p class="mb-3">We are looking for an experienced Senior Project Manager to oversee large-scale construction projects from conception to completion. The ideal candidate will have strong leadership skills and extensive experience in construction management.</p>
+                            <h6>Responsibilities:</h6>
+                            <ul class="mb-3">
+                                <li>Manage project timelines, budgets, and resources</li>
+                                <li>Coordinate with clients, architects, and subcontractors</li>
+                                <li>Ensure compliance with safety regulations and quality standards</li>
+                                <li>Lead project teams and provide technical guidance</li>
+                            </ul>
+                            <h6>Requirements:</h6>
+                            <ul class="mb-4">
+                                <li>Bachelor's degree in Civil Engineering or related field</li>
+                                <li>8+ years of construction project management experience</li>
+                                <li>PMP certification preferred</li>
+                                <li>Strong knowledge of construction processes and regulations</li>
+                            </ul>
+                            <button class="apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-job="Senior Project Manager">Apply Now</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Job 2 -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h4 class="mb-2">Site Engineer</h4>
+                            <div>
+                                <span class="job-tag">Full-time</span>
+                                <span class="job-tag">Mumbai</span>
+                                <span class="job-tag">3+ years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <p class="mb-3">We are seeking a dedicated Site Engineer to oversee construction activities, ensure quality control, and provide technical support on our project sites.</p>
+                            <h6>Responsibilities:</h6>
+                            <ul class="mb-3">
+                                <li>Supervise construction activities and ensure compliance with designs</li>
+                                <li>Conduct quality checks and maintain documentation</li>
+                                <li>Coordinate with contractors and resolve technical issues</li>
+                                <li>Monitor project progress and report to senior management</li>
+                            </ul>
+                            <h6>Requirements:</h6>
+                            <ul class="mb-4">
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>3+ years of site engineering experience</li>
+                                <li>Strong technical knowledge and problem-solving skills</li>
+                                <li>Proficiency in AutoCAD and MS Office</li>
+                            </ul>
+                            <button class="apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-job="Site Engineer">Apply Now</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Job 3 -->
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h4 class="mb-2">Safety Officer</h4>
+                            <div>
+                                <span class="job-tag">Full-time</span>
+                                <span class="job-tag">Pune</span>
+                                <span class="job-tag">2+ years experience</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <p class="mb-3">We are looking for a Safety Officer to ensure compliance with occupational health and safety guidelines and promote a culture of safety across all our construction sites.</p>
+                            <h6>Responsibilities:</h6>
+                            <ul class="mb-3">
+                                <li>Implement and monitor safety protocols on construction sites</li>
+                                <li>Conduct safety inspections and risk assessments</li>
+                                <li>Organize safety training programs for employees</li>
+                                <li>Investigate accidents and implement corrective measures</li>
+                            </ul>
+                            <h6>Requirements:</h6>
+                            <ul class="mb-4">
+                                <li>Diploma/Degree in Industrial Safety or related field</li>
+                                <li>2+ years of experience in construction safety</li>
+                                <li>Knowledge of local safety regulations and standards</li>
+                                <li>Strong communication and training skills</li>
+                            </ul>
+                            <button class="apply-btn" data-bs-toggle="modal" data-bs-target="#applyModal" data-job="Safety Officer">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Employee Benefits</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h5>Health Insurance</h5>
+                        <p class="text-muted">Comprehensive medical coverage for you and your family</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h5>Training & Development</h5>
+                        <p class="text-muted">Continuous learning opportunities and skill enhancement programs</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-umbrella"></i>
+                        </div>
+                        <h5>Retirement Plans</h5>
+                        <p class="text-muted">Secure your future with our retirement savings plans</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h5>Paid Time Off</h5>
+                        <p class="text-muted">Generous vacation, sick leave, and holiday policies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding cta-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Ready to Build Your Future With Us?</h2>
+                    <p class="mb-4">If you don't see a position that matches your skills, we'd still love to hear from you. Send us your resume, and we'll keep you in mind for future opportunities.</p>
+                    <a href="Contact-Us.html" class="btn btn-primary btn-lg me-3">Send Resume</a>
+                    <a href="Contact-Us.html" class="btn btn-outline-light btn-lg">Contact HR</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Modal -->
+    <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="applyModalLabel">Apply for <span id="jobTitle"></span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="jobApplicationForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="resume" class="form-label">Upload Resume</label>
+                                <input type="file" class="form-control" id="resume" accept=".pdf,.doc,.docx" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="coverLetter" class="form-label">Cover Letter</label>
+                            <textarea class="form-control" id="coverLetter" rows="3" placeholder="Tell us why you're interested in this position..." style="resize: none;"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="submitApplication()">Submit Application</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5>SJCPL</h5>
+                    <p>Leading construction company with over 30 years of experience delivering quality projects across various sectors.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Portfolio.html">Portfolio</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Resources.html">Resources</a></li>
+                        <li><a href="Awards.html">Awards</a></li>
+                        <li><a href="Careers.html">Careers</a></li>
+                        <li><a href="Contact-Us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Careers</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#job-openings">Current Openings</a></li>
+                        <li><a href="#">Employee Benefits</a></li>
+                        <li><a href="#">Company Culture</a></li>
+                        <li><a href="#">Training & Development</a></li>
+                        <li><a href="#">Internship Programs</a></li>
+                        <li><a href="#">Application Process</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Us</h5>
+                    <address class="mb-3">
+                        305–308, Amar Business Park,<br>
+                        Sadanand Estates,<br>
+                        Plot No.1, S.No.105, Baner Road,<br>
+                        Baner, Pune–411 045
+                    </address>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i><a href="tel:+912029996412">+91 (020) 29996412/13</a></p>
+                    <p class="mb-3"><i class="fas fa-envelope me-2"></i><a href="mailto:info@sjcpl.in">info@sjcpl.in</a></p>
+                    <div class="map-container mt-3">
+                        <div class="ratio ratio-4x3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6845.2814732733395!2d73.767407!3d18.567675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf79c2468cbd%3A0xea6b75c9fc133a64!2sS%20J%20Contracts%20Pvt%20Ltd!5e1!3m2!1sen!2sus!4v1729942202806!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="bg-primary text-white py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0 small">Copyright 2024 S J Contracts Pvt. Ltd. | All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set job title in modal
+        const applyModal = document.getElementById('applyModal');
+        applyModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const jobTitle = button.getAttribute('data-job');
+            const modalTitle = applyModal.querySelector('#jobTitle');
+            modalTitle.textContent = jobTitle;
+        });
+        
+        // Submit application function
+        function submitApplication() {
+            // In a real application, this would send the form data to a server
+            alert('Thank you for your application! We will review it and get back to you soon.');
+            const modal = bootstrap.Modal.getInstance(applyModal);
+            modal.hide();
+            document.getElementById('jobApplicationForm').reset();
+        }
+    </script>
+</body>
+</html>

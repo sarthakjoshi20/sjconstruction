@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards - SJ Contracts | Recognitions & Achievements</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --secondary: #6c757d;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --accent: #ff6b35;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        /* Header Styles */
+        .navbar {
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .iso-badge {
+            height: 40px;
+            margin-left: 1rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.800)), url('https://static.vecteezy.com/system/resources/previews/022/453/397/large_2x/silhouette-of-engineer-looking-at-construction-site-engineering-concept-double-exposure-generative-ai-free-photo.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 10rem 0 4rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Award Cards */
+        .award-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .award-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .award-content {
+            padding: 1.5rem;
+        }
+        
+        .award-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--gold);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .award-badge.silver {
+            background-color: var(--silver);
+        }
+        
+        .award-badge.bronze {
+            background-color: var(--bronze);
+        }
+        
+        .award-year {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Award Filters */
+        .award-filters {
+            background-color: var(--light);
+            padding: 1rem 0;
+        }
+        
+        .filter-btn {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background-color: transparent;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        /* Stats Section */
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            color: white;
+            margin: 0px;
+            background-color: var(--primary);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        footer h5 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--primary);
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(0px);
+            color: white;
+        }
+        
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand img {
+                height: 50px;
+            }
+            
+            .iso-badge {
+                height: 30px;
+                margin-left: 0.5rem;
+            }
+            
+            .award-img {
+                height: 250px;
+            }
+            
+            .filter-btn {
+                padding: 0.4rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            .stat-item {
+                text-align: center;
+                padding: 1rem;
+                border: 1px solid #e0e0e0;
+                border-radius: 10px;
+                color: white;
+                margin: 10px;
+                background-color: var(--primary);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 8rem 0 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .stats-section{
+                padding: 0px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-0 sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/sjlogo.jpg" alt="SJ Contracts Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Awards.html">Awards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Careers.html">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact-Us.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Awards & Recognitions</h1>
+            <p>Celebrating excellence in construction safety, quality, and innovation. Our commitment to superior standards has been recognized by prestigious industry organizations.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section-padding stats-section text-center py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Awards Won</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Gold Awards</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">International Awards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Award Filters -->
+    <section class="award-filters">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button class="filter-btn active" data-filter="all">All Awards</button>
+                    <button class="filter-btn" data-filter="safety">Safety Awards</button>
+                    <button class="filter-btn" data-filter="facility">Facility Awards</button>
+                    <button class="filter-btn" data-filter="international">International Awards</button>
+                    <button class="filter-btn" data-filter="2023">2023 Awards</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Recent Awards</h2>
+            <div class="row g-4" id="awards-grid">
+                <!-- CREDAI Safety Awards 2023 -->
+                <div class="col-lg-4 col-md-6" data-category="safety 2023">
+                    <div class="award-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="CREDAI Safety Awards 2023" class="award-img">
+                            <div class="award-badge">Gold Award</div>
+                        </div>
+                        <div class="award-content">
+                            <div class="award-year">2023</div>
+                            <h4>CREDAI Safety Awards</h4>
+                            <p class="mb-3">Awarded Gold Award For Safety Awards 2023 By CREDAI For Edge10</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Safety</span>
+                                <span class="text-muted small">Edge10 Project</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="safety 2023">
+                    <div class="award-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="CREDAI Safety Awards 2023" class="award-img">
+                            <div class="award-badge">Gold Award</div>
+                        </div>
+                        <div class="award-content">
+                            <div class="award-year">2023</div>
+                            <h4>CREDAI Safety Awards</h4>
+                            <p class="mb-3">Awarded Gold Award For Safety Awards 2023 By CREDAI For ANP Corp Universe</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Safety</span>
+                                <span class="text-muted small">ANP Corp Universe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="safety 2023">
+                    <div class="award-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="CREDAI Safety Awards 2023" class="award-img">
+                            <div class="award-badge">Gold Award</div>
+                        </div>
+                        <div class="award-content">
+                            <div class="award-year">2023</div>
+                            <h4>CREDAI Safety Awards</h4>
+                            <p class="mb-3">Awarded Gold Award For Safety Awards 2023 By CREDAI For The Central Park Runwal</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Safety</span>
+                                <span class="text-muted small">Central Park Runwal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CREDAI Labour Facility Awards 2023 -->
+                <div class="col-lg-4 col-md-6" data-category="facility 2023">
+                    <div class="award-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="CREDAI Labour Facility Awards 2023" class="award-img">
+                            <div class="award-badge">Gold Trophy</div>
+                        </div>
+                        <div class="award-content">
+                            <div class="award-year">2023</div>
+                            <h4>CREDAI Best Labour Facility Award</h4>
+                            <p class="mb-3">Awarded Gold Trophy For Best Facility Award By CREDAI In 2023 For SJ – Poonawala Towers (YZP)</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Facility</span>
+                                <span class="text-muted small">Poonawala Towers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="facility 2023">
+                    <div class="award-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="CREDAI Labour Facility Awards 2023" class="award-img">
+                            <div class="award-badge">Gold Trophy</div>
+                        </div>
+                        <div class="award-content">
+                            <div class="award-year">2023</div>
+                            <h4>CREDAI Best Labour Facility Award</h4>
+                            <p class="mb-3">Awarded Gold Trophy For Best Facility Award By CREDAI In 2023 For SJ – Pebbles Greenfield</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Facility</span>
+                                <span class="text-muted small">Pebbles Greenfield</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="facility 2023">
+                    <div class="award-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="CREDAI Labour Facility Awards 2023" class="award-img">
+                            <div class="award-badge">Gold Trophy</div>
+                        </div>
+                        <div class="award-content">
+                            <div class="award-year">2023</div>
+                            <h4>CREDAI Best Labour Facility Award</h4>
+                            <p class="mb-3">Awarded Gold Trophy For Best Facility Award By CREDAI In 2023 For SJ – Amar Pristine 4</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Facility</span>
+                                <span class="text-muted small">Amar Pristine 4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- International Safety Awards -->
+                <div class="col-lg-4 col-md-6" data-category="international">
+                    <div class="award-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="International Safety Award" class="award-img">
+                            <div class="award-badge">International</div>
+                        </div>
+                        <div class="award-content">
+                            <div class="award-year">2023</div>
+                            <h4>International Safety Award</h4>
+                            <p class="mb-3">Awarded International Safety Award By British Safety Council For Demonstrating a Strong Commitment To Good Health & Safety Management During 2022 For VTP-Aethereus</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning">International</span>
+                                <span class="text-muted small">VTP-Aethereus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-category="international">
+                    <div class="award-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="International Safety Award" class="award-img">
+                            <div class="award-badge">International</div>
+                        </div>
+                        <div class="award-content">
+                            <div class="award-year">2023</div>
+                            <h4>International Safety Award</h4>
+                            <p class="mb-3">Awarded International Safety Award By British Safety Council For Demonstrating a Strong Commitment To Good Health & Safety Management During 2022 For The Central Park</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning">International</span>
+                                <span class="text-muted small">The Central Park</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-primary btn-lg" id="loadMore">Load More Awards</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Commitment to Excellence</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="text-center">
+                        <p class="lead mb-4">These awards reflect our unwavering commitment to safety, quality, and innovation in the construction industry. We are proud to be recognized for our efforts in creating safer work environments and delivering exceptional construction projects.</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                                    <h5>Safety First</h5>
+                                    <p class="text-muted">Prioritizing worker safety and implementing best practices</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <i class="fas fa-award fa-3x text-primary mb-3"></i>
+                                    <h5>Quality Excellence</h5>
+                                    <p class="text-muted">Delivering superior construction quality in every project</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                                    <h5>Worker Welfare</h5>
+                                    <p class="text-muted">Providing excellent facilities and care for our workforce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5>SJCPL</h5>
+                    <p>Leading construction company with over 30 years of experience delivering quality projects across various sectors.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Portfolio.html">Portfolio</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Resources.html">Resources</a></li>
+                        <li><a href="Awards.html">Awards</a></li>
+                        <li><a href="Careers.html">Careers</a></li>
+                        <li><a href="Contact-Us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Awards</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Safety Awards</a></li>
+                        <li><a href="#">Facility Awards</a></li>
+                        <li><a href="#">International Awards</a></li>
+                        <li><a href="#">Quality Awards</a></li>
+                        <li><a href="#">Innovation Awards</a></li>
+                        <li><a href="#">Sustainability Awards</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Us</h5>
+                    <address class="mb-3">
+                        305–308, Amar Business Park,<br>
+                        Sadanand Estates,<br>
+                        Plot No.1, S.No.105, Baner Road,<br>
+                        Baner, Pune–411 045
+                    </address>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i><a href="tel:+912029996412">+91 (020) 29996412/13</a></p>
+                    <p class="mb-3"><i class="fas fa-envelope me-2"></i><a href="mailto:info@sjcpl.in">info@sjcpl.in</a></p>
+                    <div class="map-container mt-3">
+                        <div class="ratio ratio-4x3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6845.2814732733395!2d73.767407!3d18.567675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf79c2468cbd%3A0xea6b75c9fc133a64!2sS%20J%20Contracts%20Pvt%20Ltd!5e1!3m2!1sen!2sus!4v1729942202806!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="bg-primary text-white py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0 small">Copyright 2024 S J Contracts Pvt. Ltd. | All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Award Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const awardItems = document.querySelectorAll('#awards-grid > div');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    awardItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Load More Button Functionality
+            const loadMoreBtn = document.getElementById('loadMore');
+            let visibleItems = 6; // Initially show 6 items
+            
+            // Initially hide items beyond the first 6
+            awardItems.forEach((item, index) => {
+                if (index >= visibleItems) {
+                    item.style.display = 'none';
+                }
+            });
+            
+            loadMoreBtn.addEventListener('click', function() {
+                visibleItems += 3; // Show 3 more items
+                
+                awardItems.forEach((item, index) => {
+                    if (index < visibleItems) {
+                        item.style.display = 'block';
+                    }
+                });
+                
+                // Hide button if all items are visible
+                if (visibleItems >= awardItems.length) {
+                    loadMoreBtn.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

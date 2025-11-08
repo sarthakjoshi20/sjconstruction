@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SJ Contracts | Get In Touch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --secondary: #6c757d;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --accent: #ff6b35;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        /* Header Styles */
+        .navbar {
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .iso-badge {
+            height: 40px;
+            margin-left: 1rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0.700)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 0 4rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--light);
+        }
+        
+        .contact-info {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-form {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .form-control {
+            border-radius: 8px;
+            padding: 0.4rem 1rem;
+            border: 1px solid #dee2e6;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Office Locations */
+        .office-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .office-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .office-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .office-content {
+            padding: 1.5rem;
+        }
+        
+        /* Departments Section */
+        .department-item {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .department-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        footer h5 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--primary);
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(0px);
+            color: white;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand img {
+                height: 50px;
+            }
+            
+            .iso-badge {
+                height: 30px;
+                margin-left: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 8rem 0 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-0 sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/sjlogo.jpg" alt="SJ Contracts Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Awards.html">Awards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Careers.html">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Contact-Us.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get In Touch With Us</h1>
+            <p>We're here to answer your questions and discuss how we can help with your next construction project. Reach out to our team today.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-padding contact-section">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h2 class="section-title text-start mb-4">Contact Information</h2>
+                        <div class="mb-4">
+                            <div>
+                                <h4><i class="fas fa-map-marker-alt text-primary"></i> Our Office</h4>
+                            </div>
+                            <p class="mb-0">305–308, Amar Business Park,<br>
+                            Opp. Sadanand Estates,<br>
+                            Plot No.1, S.No.105, Baner Road,<br>
+                            Baner, Pune – 411 045</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div>
+                                <h4><i class="fas fa-phone text-primary"></i> Phone Numbers</h4>
+                            </div>
+                            <p class="mb-1"><strong>Office:</strong> <a href="tel:+912029996412">+91 (020) 29996412/13</a></p>
+                            <p class="mb-0"><strong>Mobile:</strong> <a href="tel:+919881234567">+91 98812 34567</a></p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div>
+                                <h4><i class="fas fa-envelope text-primary"></i> Email Addresses</h4>
+                            </div>
+                            <p class="mb-1"><strong>General Inquiries:</strong> <a href="mailto:info@sjcpl.in">info@sjcpl.in</a></p>
+                            <p class="mb-1"><strong>Projects:</strong> <a href="mailto:projects@sjcpl.in">projects@sjcpl.in</a></p>
+                            <p class="mb-0"><strong>Careers:</strong> <a href="mailto:careers@sjcpl.in">careers@sjcpl.in</a></p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div >
+                                <h4><i class="fas fa-clock text-primary"></i> Office Hours</h4>
+                            </div>
+                            <p class="mb-1"><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                            <p class="mb-1"><strong>Saturday:</strong> 9:00 AM - 2:00 PM</p>
+                            <p class="mb-0"><strong>Sunday:</strong> Closed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h2 class="section-title text-start mb-4">Send Us a Message</h2>
+                        <form id="contactForm">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" id="company">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select class="form-control" id="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="project">Project Inquiry</option>
+                                    <option value="quote">Request a Quote</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="career">Career Opportunity</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Tell us about your project or inquiry..." style="resize: none;"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6845.2814732733395!2d73.767407!3d18.567675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf79c2468cbd%3A0xea6b75c9fc133a64!2sS%20J%20Contracts%20Pvt%20Ltd!5e1!3m2!1sen!2sus!4v1729942202806!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Contact Our Departments</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="department-item">
+                        <div class="department-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h5>Project Inquiries</h5>
+                        <p class="text-muted">For new project discussions and consultations</p>
+                        <p><strong>Email:</strong> projects@sjcpl.in</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="department-item">
+                        <div class="department-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h5>Human Resources</h5>
+                        <p class="text-muted">For career opportunities and recruitment</p>
+                        <p><strong>Email:</strong> careers@sjcpl.in</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="department-item">
+                        <div class="department-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h5>Vendor Registration</h5>
+                        <p class="text-muted">For supplier and vendor partnerships</p>
+                        <p><strong>Email:</strong> vendors@sjcpl.in</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="department-item">
+                        <div class="department-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h5>Customer Support</h5>
+                        <p class="text-muted">For existing project support and queries</p>
+                        <p><strong>Email:</strong> support@sjcpl.in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5>SJCPL</h5>
+                    <p>Leading construction company with over 30 years of experience delivering quality projects across various sectors.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Portfolio.html">Portfolio</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Resources.html">Resources</a></li>
+                        <li><a href="Awards.html">Awards</a></li>
+                        <li><a href="Careers.html">Careers</a></li>
+                        <li><a href="Contact-Us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Commercial Construction</a></li>
+                        <li><a href="#">Residential Projects</a></li>
+                        <li><a href="#">Industrial Construction</a></li>
+                        <li><a href="#">Project Management</a></li>
+                        <li><a href="#">Renovation & Retrofitting</a></li>
+                        <li><a href="#">Design & Build</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Us</h5>
+                    <address class="mb-3">
+                        305–308, Amar Business Park,<br>
+                        Sadanand Estates,<br>
+                        Plot No.1, S.No.105, Baner Road,<br>
+                        Baner, Pune–411 045
+                    </address>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i><a href="tel:+912029996412">+91 (020) 29996412/13</a></p>
+                    <p class="mb-3"><i class="fas fa-envelope me-2"></i><a href="mailto:info@sjcpl.in">info@sjcpl.in</a></p>
+                    <div class="map-container mt-3">
+                        <div class="ratio ratio-4x3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6845.2814732733395!2d73.767407!3d18.567675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf79c2468cbd%3A0xea6b75c9fc133a64!2sS%20J%20Contracts%20Pvt%20Ltd!5e1!3m2!1sen!2sus!4v1729942202806!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="bg-primary text-white py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0 small">Copyright 2024 S J Contracts Pvt. Ltd. | All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real application, this would send the form data to a server
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

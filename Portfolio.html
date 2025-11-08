@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio - SJ Contracts | Quality Construction Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      /* Custom CSS Variables */
+      :root {
+        --primary: #0d6efd;
+        --primary-dark: #0b5ed7;
+        --secondary: #6c757d;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --accent: #ff6b35;
+      }
+      
+      /* Global Styles */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+      }
+      
+      .section-padding {
+        padding: 5rem 0;
+      }
+      
+      .section-title {
+        position: relative;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      
+      .section-title:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--primary);
+      }
+      
+      /* Header Styles */
+      .navbar {
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      
+      .navbar-brand img {
+        height: 60px;
+        transition: all 0.3s ease;
+      }
+      
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: var(--dark);
+        transition: all 0.3s ease;
+      }
+      
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: var(--primary) !important;
+      }
+      
+      .navbar-toggler {
+        border: none;
+        padding: 0.25rem 0.5rem;
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+      
+      .iso-badge {
+        height: 40px;
+        margin-left: 1rem;
+      }
+      
+      /* Page Header */
+      .page-header {
+        background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0.700)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 10rem 0 4rem;
+        text-align: center;
+      }
+      
+      .page-header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      
+      .page-header p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      /* Portfolio Filters */
+      .portfolio-filters {
+        background-color: var(--light);
+        padding: 2rem 0;
+      }
+      
+      .filter-btn {
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        background-color: transparent;
+        padding: 0.5rem 1.5rem;
+        margin: 0.25rem;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      
+      .filter-btn:hover,
+      .filter-btn.active {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      /* Portfolio Grid */
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .portfolio-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      }
+      
+      .portfolio-img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .portfolio-item:hover .portfolio-img {
+        transform: scale(1.05);
+      }
+      
+      .portfolio-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        color: white;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      
+      .portfolio-item:hover .portfolio-overlay {
+        transform: translateY(0);
+      }
+      
+      .portfolio-category {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: var(--primary);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      
+      /* Load More Button */
+      .load-more {
+        text-align: center;
+        margin-top: 3rem;
+      }
+      
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+      }
+      
+      footer h5 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+      
+      footer ul li {
+        margin-bottom: 0.75rem;
+      }
+      
+      footer a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      footer a:hover {
+        color: var(--primary);
+      }
+      
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 1.2rem;
+        margin-right: 0.75rem;
+        transition: all 0.3s ease;
+      }
+      
+      .social-icons a:hover {
+        background-color: var(--primary);
+        transform: translateY(0px);
+        color: white;
+      }
+      
+      .map-container {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .page-header h1 {
+          font-size: 2.5rem;
+        }
+        
+        .section-padding {
+          padding: 3rem 0;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .page-header h1 {
+          font-size: 2rem;
+        }
+        
+        .navbar-brand img {
+          height: 50px;
+        }
+        
+        .iso-badge {
+          height: 30px;
+          margin-left: 0.5rem;
+        }
+      }
+      
+      @media (max-width: 576px) {
+        .page-header {
+          padding: 8rem 0 2rem;
+        }
+        
+        .page-header h1 {
+          font-size: 1.75rem;
+        }
+        
+        .portfolio-img {
+          height: 250px;
+        }
+        
+        .filter-btn {
+          padding: 0.4rem 1rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header start -->
+    <header class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-0 sticky-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="img/sjlogo.jpg" alt="SJ Contracts Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="About.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Portfolio.html">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Resources.html">Resources</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Awards.html">Awards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Careers.html">Careers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contact-Us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- header end -->
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Our Portfolio</h1>
+        <p>Showcasing our diverse capabilities as a contractor with successfully completed projects across Industrial, Commercial, Residential, Education & Healthcare sectors.</p>
+      </div>
+    </section>
+
+    <!-- Portfolio Filters -->
+    <section class="portfolio-filters">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="residential">Residential</button>
+            <button class="filter-btn" data-filter="industrial">Industrial</button>
+            <button class="filter-btn" data-filter="education">Education & Healthcare</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row g-4" id="portfolio-grid">
+          <!-- Commercial Projects -->
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="commercial">
+            <div class="portfolio-category">Commercial</div>
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="AP 4 Project" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>AP 4</h4>
+              <p>Commercial Office Complex</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="commercial">
+            <div class="portfolio-category">Commercial</div>
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Gokhale Business Bay Tower B" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Gokhale Business Bay Tower B</h4>
+              <p>Mixed-Use Development</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="commercial">
+            <div class="portfolio-category">Commercial</div>
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Godrej Center" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Godrej Center</h4>
+              <p>Commercial & Retail Space</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="commercial">
+            <div class="portfolio-category">Commercial</div>
+            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Platinum Capital" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Platinum Capital</h4>
+              <p>Corporate Headquarters</p>
+            </div>
+          </div>
+          
+          <!-- Residential Projects -->
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="residential">
+            <div class="portfolio-category">Residential</div>
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="The Edge 10" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>The Edge 10</h4>
+              <p>Luxury Residential Towers</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="residential">
+            <div class="portfolio-category">Residential</div>
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Amora Elevate" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Amora Elevate</h4>
+              <p>Premium Apartments</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="residential">
+            <div class="portfolio-category">Residential</div>
+            <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Central Park Runwal" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Central Park Runwal</h4>
+              <p>Gated Community</p>
+            </div>
+          </div>
+          
+          <!-- Industrial Projects -->
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="industrial">
+            <div class="portfolio-category">Industrial</div>
+            <img src="https://sjcpl.in/images/project/8-c17a5e74cf7b44538318039671dd8019.webp" 
+                 alt="Amar Business Zone" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Amar Business Zone</h4>
+              <p>Industrial Park</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="industrial">
+            <div class="portfolio-category">Industrial</div>
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Industrial Facility" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Industrial Facility</h4>
+              <p>Manufacturing Plant</p>
+            </div>
+          </div>
+          
+          <!-- Education & Healthcare Projects -->
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="education">
+            <div class="portfolio-category">Education</div>
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Educational Institute" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Educational Institute</h4>
+              <p>Campus Development</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="education">
+            <div class="portfolio-category">Healthcare</div>
+            <img src="https://images.unsplash.com/photo-1516549655669-dfbf54c77a69?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Healthcare Facility" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Healthcare Facility</h4>
+              <p>Medical Center</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6 portfolio-item" data-category="education">
+            <div class="portfolio-category">Education</div>
+            <img src="https://images.unsplash.com/photo-1588072432836-4d8b4e4a90b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="University Building" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>University Building</h4>
+              <p>Academic Complex</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="load-more">
+          <button class="btn btn-primary btn-lg">Load More Projects</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <h5>SJCPL</h5>
+            <p>Leading construction company with over 30 years of experience delivering quality projects across various sectors.</p>
+            <div class="social-icons mt-4">
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="About.html">About Us</a></li>
+              <li><a href="Portfolio.html">Portfolio</a></li>
+              <li><a href="Services.html">Services</a></li>
+              <li><a href="Resources.html">Resources</a></li>
+              <li><a href="Awards.html">Awards</a></li>
+              <li><a href="Careers.html">Careers</a></li>
+              <li><a href="Contact-Us.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5>Portfolio</h5>
+            <ul class="list-unstyled">
+              <li><a href="#">Industrial</a></li>
+              <li><a href="#">Residential</a></li>
+              <li><a href="#">Commercial & IT</a></li>
+              <li><a href="#">Education & Healthcare</a></li>
+              <li><a href="#">Hospitality</a></li>
+              <li><a href="#">Retail</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5>Contact Us</h5>
+            <address class="mb-3">
+              305–308, Amar Business Park,<br>
+              Sadanand Estates,<br>
+              Plot No.1, S.No.105, Baner Road,<br>
+              Baner, Pune–411 045
+            </address>
+            <p class="mb-1"><i class="fas fa-phone me-2"></i><a href="tel:+912029996412">+91 (020) 29996412/13</a></p>
+            <p class="mb-3"><i class="fas fa-envelope me-2"></i><a href="mailto:info@sjcpl.in">info@sjcpl.in</a></p>
+            <div class="map-container mt-3">
+              <div class="ratio ratio-4x3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6845.2814732733395!2d73.767407!3d18.567675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf79c2468cbd%3A0xea6b75c9fc133a64!2sS%20J%20Contracts%20Pvt%20Ltd!5e1!3m2!1sen!2sus!4v1729942202806!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Copyright -->
+    <div class="bg-primary text-white py-2">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12 text-center">
+            <p class="mb-0 small">Copyright 2024 S J Contracts Pvt. Ltd. | All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright end -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+      // Portfolio Filter Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            portfolioItems.forEach(item => {
+              if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          });
+        });
+        
+        // Load More Button Functionality
+        const loadMoreBtn = document.querySelector('.load-more button');
+        let visibleItems = 9; // Initially show 9 items
+        
+        // Initially hide items beyond the first 9
+        portfolioItems.forEach((item, index) => {
+          if (index >= visibleItems) {
+            item.style.display = 'none';
+          }
+        });
+        
+        loadMoreBtn.addEventListener('click', function() {
+          visibleItems += 6; // Show 6 more items
+          
+          portfolioItems.forEach((item, index) => {
+            if (index < visibleItems) {
+              item.style.display = 'block';
+            }
+          });
+          
+          // Hide button if all items are visible
+          if (visibleItems >= portfolioItems.length) {
+            loadMoreBtn.style.display = 'none';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

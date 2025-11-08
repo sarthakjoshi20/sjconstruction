@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - SJ Contracts | Quality Construction Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --secondary: #6c757d;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --accent: #ff6b35;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        /* Header Styles */
+        .navbar {
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary) !important;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .iso-badge {
+            height: 40px;
+            margin-left: 1rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0.700)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 0 4rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Services Section */
+        .service-card {
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background-color: white;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Service Tabs */
+        .service-tabs {
+            background-color: var(--light);
+            padding: 2rem 0;
+        }
+        
+        .nav-tabs {
+            border: none;
+            justify-content: center;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tabs .nav-link.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .nav-tabs .nav-link:hover:not(.active) {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+        
+        .tab-content {
+            padding: 3rem 0;
+        }
+        
+        .tab-pane img {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Process Section */
+        .process-step {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.700), rgba(0, 0, 0, 0.700)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        footer h5 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        footer ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--primary);
+            
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary);
+            transform: translateY(0px);
+            color: white;
+        }
+        
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand img {
+                height: 50px;
+            }
+            
+            .iso-badge {
+                height: 30px;
+                margin-left: 0.5rem;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 0.5rem 1rem;
+                margin: 0.25rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 8rem 0 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-0 sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/sjlogo.jpg" alt="SJ Contracts Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="About.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Awards.html">Awards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Careers.html">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact-Us.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Construction Services</h1>
+            <p>Comprehensive construction solutions tailored to meet your specific needs. From concept to completion, we deliver quality, safety, and value.</p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Our Comprehensive Services</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>Commercial Construction</h4>
+                        <p>State-of-the-art commercial spaces including offices, retail centers, and business parks designed for functionality and aesthetics.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-primary me-2"></i>Office Buildings</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Retail Spaces</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Business Parks</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Mixed-Use Developments</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Residential Projects</h4>
+                        <p>Luxury apartments, housing complexes, and individual homes built with precision and attention to detail.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-primary me-2"></i>Apartment Complexes</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Gated Communities</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Individual Homes</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Townhouse Developments</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h4>Industrial Construction</h4>
+                        <p>Robust industrial facilities, warehouses, and manufacturing plants designed for efficiency and durability.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-primary me-2"></i>Manufacturing Plants</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Warehouses</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Industrial Parks</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Logistics Centers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h4>Project Management</h4>
+                        <p>Comprehensive project management services ensuring timely delivery and adherence to budget constraints.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-primary me-2"></i>Planning & Scheduling</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Budget Management</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Quality Control</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Risk Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Renovation & Retrofitting</h4>
+                        <p>Transforming existing structures with modern upgrades while preserving their original integrity and charm.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-primary me-2"></i>Structural Upgrades</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Facade Renovation</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Interior Remodeling</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Energy Efficiency Upgrades</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h4>Design & Build</h4>
+                        <p>Integrated design and construction services delivering cohesive projects from concept to completion.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-primary me-2"></i>Architectural Design</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Engineering Services</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Construction Planning</li>
+                            <li><i class="fas fa-check text-primary me-2"></i>Integrated Delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Tabs -->
+    <section class="service-tabs">
+        <div class="container">
+            <h2 class="section-title">Our Service Approach</h2>
+            
+            <ul class="nav nav-tabs mb-4" id="serviceTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="planning-tab" data-bs-toggle="tab" data-bs-target="#planning" type="button" role="tab" aria-controls="planning" aria-selected="true">Planning</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="design-tab" data-bs-toggle="tab" data-bs-target="#design" type="button" role="tab" aria-controls="design" aria-selected="false">Design</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="execution-tab" data-bs-toggle="tab" data-bs-target="#execution" type="button" role="tab" aria-controls="execution" aria-selected="false">Execution</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="completion-tab" data-bs-toggle="tab" data-bs-target="#completion" type="button" role="tab" aria-controls="completion" aria-selected="false">Completion</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="serviceTabsContent">
+                <div class="tab-pane fade show active" id="planning" role="tabpanel" aria-labelledby="planning-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h3>Strategic Planning</h3>
+                            <p>Our comprehensive planning phase ensures that every project starts on the right foot. We conduct thorough site analysis, feasibility studies, and develop detailed project plans that align with your vision and budget.</p>
+                            <ul>
+                                <li>Site evaluation and analysis</li>
+                                <li>Feasibility studies and cost estimation</li>
+                                <li>Regulatory compliance and permits</li>
+                                <li>Project scheduling and resource planning</li>
+                                <li>Risk assessment and mitigation strategies</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Planning Phase" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="design" role="tabpanel" aria-labelledby="design-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Design Phase" class="img-fluid">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>Innovative Design</h3>
+                            <p>Our design team combines creativity with technical expertise to develop innovative solutions that are both aesthetically pleasing and functionally efficient. We focus on sustainable practices and user-centric design principles.</p>
+                            <ul>
+                                <li>Architectural design and visualization</li>
+                                <li>Structural engineering and analysis</li>
+                                <li>MEP (Mechanical, Electrical, Plumbing) design</li>
+                                <li>Sustainable and green building design</li>
+                                <li>Value engineering and optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="execution" role="tabpanel" aria-labelledby="execution-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h3>Precise Execution</h3>
+                            <p>With decades of experience, our execution team ensures that construction progresses smoothly, safely, and according to schedule. We employ advanced construction techniques and maintain rigorous quality control throughout the process.</p>
+                            <ul>
+                                <li>Site preparation and foundation work</li>
+                                <li>Structural construction and finishing</li>
+                                <li>Quality assurance and control</li>
+                                <li>Safety management and protocols</li>
+                                <li>Progress monitoring and reporting</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Execution Phase" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="completion" role="tabpanel" aria-labelledby="completion-tab">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Completion Phase" class="img-fluid">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3>Quality Completion</h3>
+                            <p>Our commitment extends beyond construction completion. We ensure thorough testing, commissioning, and handover processes, followed by comprehensive after-sales support and maintenance services.</p>
+                            <ul>
+                                <li>Final inspections and testing</li>
+                                <li>Commissioning and handover</li>
+                                <li>Client training and documentation</li>
+                                <li>Warranty and maintenance services</li>
+                                <li>Post-occupancy evaluation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Construction Process</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Consultation</h4>
+                        <p>We begin with understanding your vision, requirements, and constraints to develop a comprehensive project plan.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Design & Planning</h4>
+                        <p>Our team creates detailed designs and plans that align with your vision while ensuring feasibility and compliance.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Construction</h4>
+                        <p>We execute the project with precision, maintaining the highest standards of quality, safety, and efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Handover</h4>
+                        <p>We ensure a smooth transition with comprehensive documentation, training, and after-sales support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding cta-section text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Ready to Start Your Construction Project?</h2>
+                    <p class="mb-4">Contact us today for a consultation and let's build something amazing together. Our team is ready to discuss your project requirements and provide a customized solution.</p>
+                    <a href="Contact-Us.html" class="btn btn-primary btn-lg me-3">Get In Touch</a>
+                    <a href="Portfolio.html" class="btn btn-outline-light btn-lg">View Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5>SJCPL</h5>
+                    <p>Leading construction company with over 30 years of experience delivering quality projects across various sectors.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Portfolio.html">Portfolio</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="Resources.html">Resources</a></li>
+                        <li><a href="Awards.html">Awards</a></li>
+                        <li><a href="Careers.html">Careers</a></li>
+                        <li><a href="Contact-Us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Commercial Construction</a></li>
+                        <li><a href="#">Residential Projects</a></li>
+                        <li><a href="#">Industrial Construction</a></li>
+                        <li><a href="#">Project Management</a></li>
+                        <li><a href="#">Renovation & Retrofitting</a></li>
+                        <li><a href="#">Design & Build</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Us</h5>
+                    <address class="mb-3">
+                        305–308, Amar Business Park,<br>
+                        Sadanand Estates,<br>
+                        Plot No.1, S.No.105, Baner Road,<br>
+                        Baner, Pune–411 045
+                    </address>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i><a href="tel:+912029996412">+91 (020) 29996412/13</a></p>
+                    <p class="mb-3"><i class="fas fa-envelope me-2"></i><a href="mailto:info@sjcpl.in">info@sjcpl.in</a></p>
+                    <div class="map-container mt-3">
+                        <div class="ratio ratio-4x3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6845.2814732733395!2d73.767407!3d18.567675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf79c2468cbd%3A0xea6b75c9fc133a64!2sS%20J%20Contracts%20Pvt%20Ltd!5e1!3m2!1sen!2sus!4v1729942202806!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="bg-primary text-white py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <p class="mb-0 small text-center">Copyright 2024 S J Contracts Pvt. Ltd. | All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
