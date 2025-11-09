@@ -140,24 +140,16 @@
         overflow: hidden;
         border-radius: 8px;
         margin-bottom: 1.5rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
-      }
-      
-      .portfolio-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
       }
       
       .portfolio-img {
         height: 300px;
         width: 100%;
+        padding: 0;
+        margin: 0%;
         object-fit: cover;
         transition: transform 0.5s ease;
-      }
-      
-      .portfolio-item:hover .portfolio-img {
-        transform: scale(1.05);
       }
       
       .portfolio-overlay {
@@ -364,126 +356,150 @@
       <div class="container">
         <div class="row g-4" id="portfolio-grid">
           <!-- Commercial Projects -->
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="commercial">
-            <div class="portfolio-category">Commercial</div>
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="AP 4 Project" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>AP 4</h4>
-              <p>Commercial Office Complex</p>
+          <div class="col-md-4 portfolio-item" data-category="commercial">
+            <div class="card">
+              <div class="portfolio-category">Commercial</div>
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="AP 4 Project" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>AP 4</h4>
+                <p>Commercial Office Complex</p>
+              </div>
+              </div>
+          </div>
+          
+          <div class="col-md-4 portfolio-item" data-category="commercial">
+            <div class="card">
+              <div class="portfolio-category">Commercial</div>
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Gokhale Business Bay Tower B" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Gokhale Business Bay Tower B</h4>
+                <p>Mixed-Use Development</p>
+              </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="commercial">
-            <div class="portfolio-category">Commercial</div>
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Gokhale Business Bay Tower B" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Gokhale Business Bay Tower B</h4>
-              <p>Mixed-Use Development</p>
+          <div class="col-md-4 portfolio-item" data-category="commercial">
+            <div class="card">
+              <div class="portfolio-category">Commercial</div>
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Godrej Center" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Godrej Center</h4>
+                <p>Commercial & Retail Space</p>
+              </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="commercial">
-            <div class="portfolio-category">Commercial</div>
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Godrej Center" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Godrej Center</h4>
-              <p>Commercial & Retail Space</p>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="commercial">
-            <div class="portfolio-category">Commercial</div>
-            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Platinum Capital" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Platinum Capital</h4>
-              <p>Corporate Headquarters</p>
+          <div class="col-md-4 portfolio-item" data-category="commercial">
+            <div class="card">
+              <div class="portfolio-category">Commercial</div>
+              <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Platinum Capital" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Platinum Capital</h4>
+                <p>Corporate Headquarters</p>
+              </div>
             </div>
           </div>
           
           <!-- Residential Projects -->
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="residential">
-            <div class="portfolio-category">Residential</div>
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="The Edge 10" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>The Edge 10</h4>
-              <p>Luxury Residential Towers</p>
+          <div class="col-md-4 portfolio-item" data-category="residential">
+            <div class="card">
+              <div class="portfolio-category">Residential</div>
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="The Edge 10" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>The Edge 10</h4>
+                <p>Luxury Residential Towers</p>
+              </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="residential">
-            <div class="portfolio-category">Residential</div>
-            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Amora Elevate" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Amora Elevate</h4>
-              <p>Premium Apartments</p>
+          <div class="col-md-4 portfolio-item" data-category="residential">
+            <div class="card">
+              <div class="portfolio-category">Residential</div>
+              <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Amora Elevate" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Amora Elevate</h4>
+                <p>Premium Apartments</p>
+              </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="residential">
-            <div class="portfolio-category">Residential</div>
-            <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Central Park Runwal" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Central Park Runwal</h4>
-              <p>Gated Community</p>
+          <div class="col-md-4 portfolio-item" data-category="residential">
+            <div class="card">
+              <div class="portfolio-category">Residential</div>
+              <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Central Park Runwal" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Central Park Runwal</h4>
+                <p>Gated Community</p>
+              </div>
             </div>
           </div>
           
           <!-- Industrial Projects -->
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="industrial">
-            <div class="portfolio-category">Industrial</div>
-            <img src="https://sjcpl.in/images/project/8-c17a5e74cf7b44538318039671dd8019.webp" 
-                 alt="Amar Business Zone" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Amar Business Zone</h4>
-              <p>Industrial Park</p>
+          <div class="col-md-4 portfolio-item" data-category="industrial">
+            <div class="card">
+              <div class="portfolio-category">Industrial</div>
+              <img src="https://sjcpl.in/images/project/8-c17a5e74cf7b44538318039671dd8019.webp" 
+                  alt="Amar Business Zone" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Amar Business Zone</h4>
+                <p>Industrial Park</p>
+              </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="industrial">
-            <div class="portfolio-category">Industrial</div>
-            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Industrial Facility" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Industrial Facility</h4>
-              <p>Manufacturing Plant</p>
+          <div class="col-md-4 portfolio-item" data-category="industrial">
+            <div class="card">
+              <div class="portfolio-category">Industrial</div>
+              <img src="https://i.pinimg.com/originals/a1/23/53/a12353af2b0f41111ffac96a07dc7dba.jpg" 
+                  alt="Industrial Facility" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Industrial Facility</h4>
+                <p>Manufacturing Plant</p>
+              </div>
             </div>
           </div>
           
           <!-- Education & Healthcare Projects -->
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="education">
-            <div class="portfolio-category">Education</div>
-            <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Educational Institute" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Educational Institute</h4>
-              <p>Campus Development</p>
+          <div class="col-md-4 portfolio-item" data-category="education">
+            <div class="card">
+              <div class="portfolio-category">Education</div>
+              <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Educational Institute" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Educational Institute</h4>
+                <p>Campus Development</p>
+              </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="education">
-            <div class="portfolio-category">Healthcare</div>
-            <img src="https://sjcpl.in/images/project/23-3146afdd36884bdf92eaa1a180496982.webp" 
-                 alt="Healthcare Facility" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>Healthcare Facility</h4>
-              <p>Medical Center</p>
+          <div class="col-md-4 portfolio-item" data-category="education">
+            <div class="card">
+              <div class="portfolio-category">Healthcare</div>
+              <img src="https://sjcpl.in/images/project/23-3146afdd36884bdf92eaa1a180496982.webp" 
+                  alt="Healthcare Facility" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>Healthcare Facility</h4>
+                <p>Medical Center</p>
+              </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6 portfolio-item" data-category="education">
-            <div class="portfolio-category">Education</div>
-            <img src="https://sjcpl.in/images/project/31-eb256ac0bdf24967bbd57cf71f2bf527.webp" 
-                 alt="University Building" class="portfolio-img">
-            <div class="portfolio-overlay">
-              <h4>University Building</h4>
-              <p>Academic Complex</p>
+          <div class="col-md-4 portfolio-item" data-category="education">
+            <div class="card">
+              <div class="portfolio-category">Education</div>
+              <img src="https://sjcpl.in/images/project/31-eb256ac0bdf24967bbd57cf71f2bf527.webp" 
+                  alt="University Building" class="portfolio-img">
+              <div class="portfolio-overlay">
+                <h4>University Building</h4>
+                <p>Academic Complex</p>
+              </div>
             </div>
           </div>
         </div>
